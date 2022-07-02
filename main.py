@@ -5,7 +5,7 @@ import schedule
 import time
 
 
-# URL to the form you want to fill. formResponse should be used instead of viewform
+# URL to the form you want to fill. Replace 'viewform' with 'formResponse'
 url = 'https://docs.google.com/forms/d/e/1FAIpQLSeuX4sCwE-2mSUEvIVgs8FVVwaDbsACXzpLamsWy3PQ6sgdIQ/formResponse'
 
 
@@ -48,6 +48,8 @@ def execute_afternoon():
     send_attendance(url, final_data)
 
 
+# this is the scheduler which handles the task you want to perform on a given time
+# refer to package docs
 schedule.every(1).minutes.do(execute_afternoon)
 
 while True:
